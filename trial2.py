@@ -13,19 +13,22 @@ import os
 from nltk.classify.maxent import MaxentClassifier
 
 
-def extract_features(sentence: List[str], position: int):
+def extract_features(sentence: List[str]):
     d = {}
-    word = sentence[position][0]
-    d['first_letter'] = word[0]
-    d['last_letter'] = word[-1]
-    d['last_two_letters'] = word[-2:]
-    d['endsAlef'] = word[-1] == 'א'
-    d['endsOs'] = word[-2:] == 'ות'
-    d['endsIn'] = word[-2:] == 'ין'
-    d['beginHeh'] = word[0] == 'ה'
-    d['beginShin'] = word[0] == 'ש'
-
+    for i in range(len(sentence)):
+        word = sentence[i]
+        d['first_letter'] = word[0]
+        d['last_letter'] = word[-1]
+        d['last_two_letters'] = word[-2:]
+        d['endsAlef'] = word[-1] == 'א'
+        d['endsOs'] = word[-2:] == 'ות'
+        d['endsIn'] = word[-2:] == 'ין'
+        d['beginHeh'] = word[0] == 'ה'
+        d['beginShin'] = word[0] == 'ש'
+        d['endsIm'] = word[-2:] == 'ים'
+        print(d)
     return d
 
 
-print(extract_features(["hello my name is", "my name is you", "name is her", "is"], 2))
+text = "בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ׃"
+extract_features(text.split())
