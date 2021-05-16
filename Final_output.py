@@ -1,16 +1,6 @@
-import codecs
-import numpy as np
-import nltk
 import pycrfsuite
-import sys
-# from bs4 import BeautifulSoup as bs
-# from bs4.element import Tag
 from sklearn.model_selection import train_test_split
-# from sklearn.metrics import classification_report
 from typing import List, Tuple
-from pprint import pprint
-import os
-from nltk.classify.maxent import MaxentClassifier
 from trial import print_word_pos
 
 def extract_features(pesukim: List[List[Tuple]]): # [[('subs', 'בְּרֵאשִׁית'), ('verb', 'בָּרָא'), ('subs',
@@ -70,8 +60,6 @@ def extract_labels(pesukim: List[List[Tuple]]): # [[('subs', 'בְּרֵאשִׁ
     return pesukim_d
 
 
-
-text = "בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ׃"
 print("--------------------------------------")
 print('pesukim', len(extract_features(print_word_pos())[:2]), extract_features(print_word_pos())[:2])
 training_features = extract_features(print_word_pos())
@@ -100,8 +88,8 @@ print(trainer.logparser.last_iteration)
 crf_tagger = pycrfsuite.Tagger()
 crf_tagger.open(r'C:\Users\shira\PycharmProjects\semester_project_hebrew\model.crfsuite')
 predicted_tags = crf_tagger.tag(test_docs[1])
-print("Predicted: ",predicted_tags)
-print("Correct  : ",test_labels[1])
+print("Predicted: ", predicted_tags)
+print("Correct  : ", test_labels[1])
 
 from sklearn.metrics import classification_report
 
