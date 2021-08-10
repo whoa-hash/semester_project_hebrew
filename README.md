@@ -8,7 +8,7 @@ https://nlpforhackers.io/crf-pos-tagger/
 https://nlpforhackers.io/training-pos-tagger/
 
 packages:
-scikit-learn, nltk, pycrfsuite
+scikit-learn, nltk, pycrfsuite.
 Heavily used Text Fabric.
 
 Result Below:
