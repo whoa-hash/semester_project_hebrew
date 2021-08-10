@@ -9,6 +9,7 @@ https://nlpforhackers.io/training-pos-tagger/
 
 packages:
 scikit-learn, nltk, pycrfsuite
+Heavily used Text Fabric.
 
 Result Below:
 ![image](https://user-images.githubusercontent.com/59946519/119385059-9de24c00-bc93-11eb-9334-7d7d7caa778e.png)
