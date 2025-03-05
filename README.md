@@ -1,4 +1,4 @@
-# project_hebrew
+# Hebrew_Grammar_Project
 Project in NLP to tag parts of speech of Hebrew words with nekudos
 
 References:
